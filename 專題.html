@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        智慧小型溫室
+    </title>
+
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="團隊.css">
+    <link rel="stylesheet" href="關於.css">
+    <link rel="stylesheet" href="過程.css">
+    <link rel="stylesheet" href="AIOT系統.css">
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #fff;
+            width: 100%;
+            height: 600vh;
+            margin: 0; /* 去除默认的body margin */
+        }
+
+        #top {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: #4d4d4d;
+            z-index: 1000; /* 将导航置于顶层 */
+        }
+
+        .content {
+            display: flex;
+            /* 去除 right 和 left，添加 margin 和 padding */
+            margin-left: auto;
+            padding: 0 20px;
+            align-items: center; /* 垂直居中内容 */
+            height: 100%;
+        }
+
+        .li {
+            margin: 0 9px;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 0 18px;
+        }
+
+        .li a {
+            color: #a0a0a0;
+        }
+
+        .page {
+            width: 100%;
+            height: 100vh;
+            background: var(--bgcolor);
+        }
+    </style>
+</head>
+<body>
+    <section id="top">
+        <ul class="content">
+            <li class="li 首頁"><a href="#page1" title="首頁">首頁</a></li>
+            <li class="li 團隊"><a href="#page2" title="團隊">團隊</a></li>
+            <li class="li 關於"><a href="#page3" title="關於">關於</a></li>
+            <li class="li 過程"><a href="#page4" title="過程">過程</a></li>
+            <li class="li AIOT系統"><a href="#page5" title="AIOT系統">AIOT系統</a></li>
+        </ul>
+    </section>
+    <section id="page1" class="page" style="--bgcolor: rgba(255, 0, 0, .4);">
+        <div class="home-tetx">
+            <h2>需要</h2>
+        </div>
+    </section>
+
+    <section id="page2" class="page" style="--bgcolor: skyblue;">
+        <div class="團隊-text">
+        <h2>喔耶</h2>
+        </div>
+    </section>
+
+    <section id="page3" class="page" style="--bgcolor: slateblue;">
+    </section>
+
+    <section id="page4" class="page" style="--bgcolor: green;">
+    </section>
+
+    <section id="page5" class="page" style="--bgcolor: black;">
+    </section>
+
+    <section id="page6" class="page" style="--bgcolor: grey;">
+    </section>
+
+</body>
+</html>
