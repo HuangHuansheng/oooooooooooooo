@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>抽獎遊戲</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #0d0d41;
+            /* 深蓝色背景 */
+            color: white;
+            /* 文字颜色为白色 */
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 10px;
+        }
+
+        #result {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        #background-image {
+            position: fixed;
+            background-image: url("抽獎.jpeg");
+            opacity: 0.6;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            transition: transform 0.3s ease;
+            transform-origin: center center;
+            z-index: -10000;
+        }
+    </style>
+</head> 
+
+<body>
+    <div id="background-image"></div>
+    <h1>抽獎遊戲</h1>
+    <button id="drawButton">抽獎</button>
+    <div id="result"></div>
+
+    <script>
+        const options = [
+            "勁辣雞腿+大杯冰紅茶=",
+            "韓式泡菜豬排+大杯冰紅茶=",
+            "檸檬雞+大杯冰紅茶=",
+            "燻烤雞腿+大杯冰紅茶=",
+            "大阪雞排+大杯冰紅茶=",
+            "北海鮮蝦+大杯冰紅茶=",
+            "薑汁燒肉+大杯冰紅茶=",
+            "鄉村培根+大杯冰紅茶=",
+            "羅莎香雞+大杯冰紅茶=",
+            "鮪魚+大杯冰紅茶=",
+            "照燒豬排+大杯冰紅茶=",
+            "泡菜燒肉+大杯冰紅茶=",
+            "醃燻雞肉+大杯冰紅茶=",
+            "起司+大杯冰紅茶=",
+            "紐澳良雞肉+大杯冰紅茶=",
+            "玉米+大杯冰紅茶=",
+            "肉鬆+大杯冰紅茶="];
+
+        function getRandomOption() {
+            const randomIndex = Math.floor(Math.random() * options.length);
+            return options[randomIndex];
+        }
+
+        const drawButton = document.getElementById('drawButton');
+        const resultElement = document.getElementById('result');
+
+        drawButton.addEventListener('click', () => {
+            const randomOption = getRandomOption();
+            resultElement.innerHTML = `恭喜你抽中了：<br>${randomOption}`; /* 换行 */
+        });
+    </script>
+</body>
+
+</html>
