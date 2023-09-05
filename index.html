@@ -1,105 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>
-        智慧小型溫室
-    </title>
-
-    <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="團隊.css">
-    <link rel="stylesheet" href="關於.css">
-    <link rel="stylesheet" href="過程.css">
-    <link rel="stylesheet" href="AIOT系統.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>抽獎遊戲</title>
     <style>
-        * {
-            padding: 0;
-            margin: 0;
-            list-style: none;
-            text-decoration: none;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
-            background: #fff;
-            width: 100%;
-            height: 600vh;
-            margin: 0; /* 去除默认的body margin */
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #0d0d41;
+            /* 深蓝色背景 */
+            color: white;
+            /* 文字颜色为白色 */
         }
 
-        #top {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 50px;
-            background: #4d4d4d;
-            z-index: 1000; /* 将导航置于顶层 */
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 10px;
         }
 
-        .content {
-            display: flex;
-            /* 去除 right 和 left，添加 margin 和 padding */
-            margin-left: auto;
-            padding: 0 20px;
-            align-items: center; /* 垂直居中内容 */
-            height: 100%;
-        }
-
-        .li {
-            margin: 0 9px;
-            font-size: 20px;
+        #result {
+            font-size: 24px;
             font-weight: bold;
-            padding: 0 18px;
+            margin-top: 20px;
         }
 
-        .li a {
-            color: #a0a0a0;
-        }
-
-        .page {
-            width: 100%;
-            height: 100vh;
-            background: var(--bgcolor);
+        #background-image {
+            position: fixed;
+            background-image: url("抽獎.jpeg");
+            opacity: 0.6;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            transition: transform 0.3s ease;
+            transform-origin: center center;
+            z-index: -10000;
         }
     </style>
-</head>
+</head> 
+
 <body>
-    <section id="top">
-        <ul class="content">
-            <li class="li 首頁"><a href="#page1" title="首頁">首頁</a></li>
-            <li class="li 團隊"><a href="#page2" title="團隊">團隊</a></li>
-            <li class="li 關於"><a href="#page3" title="關於">關於</a></li>
-            <li class="li 過程"><a href="#page4" title="過程">過程</a></li>
-            <li class="li AIOT系統"><a href="#page5" title="AIOT系統">AIOT系統</a></li>
-        </ul>
-    </section>
-    <section id="page1" class="page" style="--bgcolor: rgba(255, 0, 0, .4);">
-        <div class="home-tetx">
-            <h2>需要</h2>
-        </div>
-    </section>
+    <div id="background-image"></div>
+    <h1>抽獎遊戲</h1>
+    <button id="drawButton">抽獎</button>
+    <div id="result"></div>
 
-    <section id="page2" class="page" style="--bgcolor: skyblue;">
-        <div class="團隊-text">
-        <h2>喔耶</h2>
-        </div>
-    </section>
+    <script>
+        const options = [
+            "勁辣雞腿+大杯冰紅茶=",
+            "韓式泡菜豬排+大杯冰紅茶=",
+            "檸檬雞+大杯冰紅茶=",
+            "燻烤雞腿+大杯冰紅茶=",
+            "大阪雞排+大杯冰紅茶=",
+            "北海鮮蝦+大杯冰紅茶=",
+            "薑汁燒肉+大杯冰紅茶=",
+            "鄉村培根+大杯冰紅茶=",
+            "羅莎香雞+大杯冰紅茶=",
+            "鮪魚+大杯冰紅茶=",
+            "照燒豬排+大杯冰紅茶=",
+            "泡菜燒肉+大杯冰紅茶=",
+            "醃燻雞肉+大杯冰紅茶=",
+            "起司+大杯冰紅茶=",
+            "紐澳良雞肉+大杯冰紅茶=",
+            "玉米+大杯冰紅茶=",
+            "肉鬆+大杯冰紅茶="];
 
-    <section id="page3" class="page" style="--bgcolor: slateblue;">
-    </section>
+        function getRandomOption() {
+            const randomIndex = Math.floor(Math.random() * options.length);
+            return options[randomIndex];
+        }
 
-    <section id="page4" class="page" style="--bgcolor: green;">
-    </section>
+        const drawButton = document.getElementById('drawButton');
+        const resultElement = document.getElementById('result');
 
-    <section id="page5" class="page" style="--bgcolor: black;">
-    </section>
-
-    <section id="page6" class="page" style="--bgcolor: grey;">
-    </section>
-
+        drawButton.addEventListener('click', () => {
+            const randomOption = getRandomOption();
+            resultElement.innerHTML = `恭喜你抽中了：<br>${randomOption}`; /* 换行 */
+        });
+    </script>
 </body>
+
 </html>
